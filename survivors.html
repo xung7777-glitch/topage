@@ -11,8 +11,12 @@
     const PAGE_TITLE = "小雪在邊疆修仙";  
     // =========================
 
-    // 自動跳轉
-    window.location.href = TARGET_URL;
+    // ★ 延遲跳轉（讓背景有時間顯示）
+    window.onload = () => {
+      setTimeout(() => {
+        window.location.href = TARGET_URL;
+      }, 2500); // 2.5秒（推薦）
+    };
   </script>
 
   <style>
