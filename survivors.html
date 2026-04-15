@@ -17,9 +17,8 @@
       text-align: center;
 
       background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true")
-      no-repeat center top;
+      no-repeat center center;
 
-      background-size: cover;
       background-color: #000;
     }
 
@@ -29,23 +28,22 @@
       border-radius: 12px;
     }
 
-    /* ✔ 電腦微調（避免切頭太嚴重） */
+    /* ✔ 電腦：完整顯示（不裁切，允許黑邊） */
     @media (min-width: 768px) {
       body {
-        background-position: center 20%;
-        background-size: cover;
+        background-size: contain;
+        background-position: center center;
       }
     }
 
-    /* ✔ 手機保持完整直立感 */
+    /* ✔ 手機：視覺填滿（保留修仙氛圍） */
     @media (max-width: 767px) {
       body {
+        background-size: cover;
         background-position: center center;
-        background-size: contain;
       }
     }
   </style>
-
 </head>
 
 <body>
@@ -63,6 +61,5 @@
       }, 3000);
     });
   </script>
-
 </body>
 </html>
