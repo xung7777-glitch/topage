@@ -11,12 +11,10 @@
     const PAGE_TITLE = "小雪在邊疆修仙";  
     // =========================
 
-    // ★ 延遲跳轉（讓背景有時間顯示）
-    window.onload = () => {
-      setTimeout(() => {
-        window.location.href = TARGET_URL;
-      }, 2500); // 2.5秒（推薦）
-    };
+    // ★ 進來就開始倒數（不等圖片載完）
+    setTimeout(() => {
+      window.location.href = TARGET_URL;
+    }, 3000); // 3秒：保證看得到背景
   </script>
 
   <style>
@@ -59,10 +57,7 @@
   </div>
 
   <script>
-    // 顯示標題
     document.getElementById("title").innerText = PAGE_TITLE;
-
-    // 同步連結
     document.getElementById("link").href = TARGET_URL;
   </script>
 
