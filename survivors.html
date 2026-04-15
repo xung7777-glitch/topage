@@ -5,18 +5,6 @@
   <meta charset="UTF-8">
   <title>入口跳轉中...</title>
 
-  <script>
-    // ======== 【請填寫】========
-    const TARGET_URL = "https://ais-pre-pjls4e3htzaffmjhosnigt-381906535429.asia-northeast1.run.app";  
-    const PAGE_TITLE = "小雪在邊疆修仙";  
-    // =========================
-
-    // ★ 進來就開始倒數（不等圖片載完）
-    setTimeout(() => {
-      window.location.href = TARGET_URL;
-    }, 3000); // 3秒：保證看得到背景
-  </script>
-
   <style>
     body {
       margin: 0;
@@ -29,7 +17,6 @@
       font-family: sans-serif;
       text-align: center;
 
-      /* 背景圖片 */
       background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true") no-repeat center center;
       background-size: cover;
     }
@@ -39,26 +26,25 @@
       padding: 25px 35px;
       border-radius: 12px;
     }
-
-    a {
-      color: #aaccff;
-      text-decoration: none;
-      font-size: 18px;
-    }
   </style>
 
 </head>
 
 <body>
   <div class="box">
-    <h2 id="title"></h2>
+    <h2 id="title">小雪在邊疆修仙</h2>
     <p>正在為你開啟入口...</p>
-    <a id="link" href="#">如果沒有跳轉，點我進入</a>
   </div>
 
   <script>
-    document.getElementById("title").innerText = PAGE_TITLE;
-    document.getElementById("link").href = TARGET_URL;
+    const TARGET_URL = "https://ais-pre-pjls4e3htzaffmjhosnigt-381906535429.asia-northeast1.run.app";
+
+    // ★ 強制等畫面 render 完再開始計時
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        window.location.href = TARGET_URL;
+      }, 3000); // 3秒保證看到背景
+    });
   </script>
 
 </body>
