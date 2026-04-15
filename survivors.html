@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>入口跳轉中...</title>
+
+  <script>
+    // ======== 【請填寫】========
+    const TARGET_URL = "https://ais-pre-pjls4e3htzaffmjhosnigt-381906535429.asia-northeast1.run.app";  
+    const PAGE_TITLE = "小雪在邊疆修仙";  
+    // =========================
+
+    // 自動跳轉
+    window.location.href = TARGET_URL;
+  </script>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #ffffff;
+      font-family: sans-serif;
+      text-align: center;
+
+      /* 背景圖片 */
+      background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true") no-repeat center center;
+      background-size: cover;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.5);
+      padding: 25px 35px;
+      border-radius: 12px;
+    }
+
+    a {
+      color: #aaccff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="box">
+    <h2 id="title"></h2>
+    <p>正在為你開啟入口...</p>
+    <a id="link" href="#">如果沒有跳轉，點我進入</a>
+  </div>
+
+  <script>
+    // 顯示標題
+    document.getElementById("title").innerText = PAGE_TITLE;
+
+    // 同步連結
+    document.getElementById("link").href = TARGET_URL;
+  </script>
+
+</body>
+</html>
