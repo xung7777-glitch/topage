@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>入口跳轉中...</title>
+
+  <style>
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.jfif?raw=true")
+      no-repeat center center;
+      background-color: #000;
+      z-index: -1;
+      transform: scale(1.02);
+    }
+
+    /* 手機 */
+    @media (max-width: 767px) {
+      .bg {
+        background-size: cover;
+      }
+    }
+
+    /* 電腦 */
+    @media (min-width: 768px) {
+      .bg {
+        background-size: contain;
+        transform: none;
+      }
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: #ffffff;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.5);
+      padding: 25px 35px;
+      border-radius: 12px;
+    }
+
+    a {
+      color: #aaccff;
+      text-decoration: none;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="bg"></div>
+
+  <div class="box">
+    <h2 id="title">小雪的英咒寶典</h2>
+    <p>正在為你開啟入口...</p>
+
+    <!-- ✔ 保底入口（永遠存在） -->
+    <a id="link" href="#">如果沒有跳轉，點我進入</a>
+  </div>
+
+  <script>
+    const TARGET_URL = "https://ais-pre-i6xvba6i75h3mvbzrssb7y-381906535429.asia-northeast1.run.app";
+
+    // 顯示保底連結
+    document.getElementById("link").href = TARGET_URL;
+
+    // 穩定延遲跳轉（避免過早切畫面）
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        window.location.href = TARGET_URL;
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
