@@ -5,6 +5,33 @@
   <title>入口跳轉中...</title>
 
   <style>
+    /* ✔ 背景專用層（關鍵修正） */
+    .bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true")
+      no-repeat center center;
+      background-color: #000;
+      z-index: -1;
+    }
+
+    /* ✔ 電腦：完整顯示 */
+    @media (min-width: 768px) {
+      .bg {
+        background-size: contain;
+      }
+    }
+
+    /* ✔ 手機：填滿視覺 */
+    @media (max-width: 767px) {
+      .bg {
+        background-size: cover;
+      }
+    }
+
     body {
       margin: 0;
       height: 100vh;
@@ -15,11 +42,6 @@
       color: #ffffff;
       font-family: sans-serif;
       text-align: center;
-
-      background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true")
-      no-repeat center center;
-
-      background-color: #000;
     }
 
     .box {
@@ -27,26 +49,14 @@
       padding: 25px 35px;
       border-radius: 12px;
     }
-
-    /* ✔ 電腦：完整顯示（不裁切，允許黑邊） */
-    @media (min-width: 768px) {
-      body {
-        background-size: contain;
-        background-position: center center;
-      }
-    }
-
-    /* ✔ 手機：視覺填滿（保留修仙氛圍） */
-    @media (max-width: 767px) {
-      body {
-        background-size: cover;
-        background-position: center center;
-      }
-    }
   </style>
 </head>
 
 <body>
+
+  <!-- ✔ 背景層 -->
+  <div class="bg"></div>
+
   <div class="box">
     <h2 id="title">小雪在邊疆修仙</h2>
     <p>正在為你開啟入口...</p>
@@ -61,5 +71,6 @@
       }, 3000);
     });
   </script>
+
 </body>
 </html>
