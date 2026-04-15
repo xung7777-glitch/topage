@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-TW">
 <head>
   <meta charset="UTF-8">
@@ -17,8 +16,12 @@
       font-family: sans-serif;
       text-align: center;
 
-      background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true") no-repeat center center;
-      background-size: cover;
+      /* ✔ 修正：手機完整顯示小雪（不裁切） */
+      background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true")
+      no-repeat center center;
+
+      background-size: contain;
+      background-color: #000;
     }
 
     .box {
@@ -39,11 +42,11 @@
   <script>
     const TARGET_URL = "https://ais-pre-pjls4e3htzaffmjhosnigt-381906535429.asia-northeast1.run.app";
 
-    // ★ 強制等畫面 render 完再開始計時
+    // ✔ 保證先渲染畫面再倒數跳轉
     requestAnimationFrame(() => {
       setTimeout(() => {
         window.location.href = TARGET_URL;
-      }, 3000); // 3秒保證看到背景
+      }, 3000);
     });
   </script>
 
