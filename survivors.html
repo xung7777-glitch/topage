@@ -16,11 +16,10 @@
       font-family: sans-serif;
       text-align: center;
 
-      /* ✔ 修正：手機完整顯示小雪（不裁切） */
       background: url("https://github.com/xung7777-glitch/my-images/blob/main/bg_meditation.png?raw=true")
-      no-repeat center center;
+      no-repeat center top;
 
-      background-size: contain;
+      background-size: cover;
       background-color: #000;
     }
 
@@ -28,6 +27,22 @@
       background: rgba(0,0,0,0.5);
       padding: 25px 35px;
       border-radius: 12px;
+    }
+
+    /* ✔ 電腦微調（避免切頭太嚴重） */
+    @media (min-width: 768px) {
+      body {
+        background-position: center 20%;
+        background-size: cover;
+      }
+    }
+
+    /* ✔ 手機保持完整直立感 */
+    @media (max-width: 767px) {
+      body {
+        background-position: center center;
+        background-size: contain;
+      }
     }
   </style>
 
@@ -42,7 +57,6 @@
   <script>
     const TARGET_URL = "https://ais-pre-pjls4e3htzaffmjhosnigt-381906535429.asia-northeast1.run.app";
 
-    // ✔ 保證先渲染畫面再倒數跳轉
     requestAnimationFrame(() => {
       setTimeout(() => {
         window.location.href = TARGET_URL;
