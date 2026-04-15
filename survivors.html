@@ -5,7 +5,6 @@
   <title>入口跳轉中...</title>
 
   <style>
-    /* ✔ 背景專用層（關鍵修正） */
     .bg {
       position: fixed;
       top: 0;
@@ -16,19 +15,23 @@
       no-repeat center center;
       background-color: #000;
       z-index: -1;
+      transform: scale(1.02); /* ✔ 消除細微黑邊感 */
+    }
+
+    /* ✔ 手機：填滿（不留黑邊） */
+    @media (max-width: 767px) {
+      .bg {
+        background-size: cover;
+        background-position: center center;
+      }
     }
 
     /* ✔ 電腦：完整顯示 */
     @media (min-width: 768px) {
       .bg {
         background-size: contain;
-      }
-    }
-
-    /* ✔ 手機：填滿視覺 */
-    @media (max-width: 767px) {
-      .bg {
-        background-size: cover;
+        background-position: center center;
+        transform: none;
       }
     }
 
@@ -54,7 +57,6 @@
 
 <body>
 
-  <!-- ✔ 背景層 -->
   <div class="bg"></div>
 
   <div class="box">
